@@ -1,0 +1,594 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://www.w3schools.com/django/ -->
+<html lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Django Tutorial</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
+<meta name="Description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.">
+<meta property="og:image" content="https://www.w3schools.com/images/w3schools_logo_436_2.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="436">
+<meta property="og:image:height" content="228">
+<meta property="og:description" content="W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more.">
+<link rel="icon" href="https://www.w3schools.com/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.w3schools.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.w3schools.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.w3schools.com/favicon-16x16.png">
+<link rel="manifest" href="https://www.w3schools.com/site.webmanifest">
+<link rel="mask-icon" href="https://www.w3schools.com/safari-pinned-tab.svg" color="#04aa6d">
+<meta name="msapplication-TileColor" content="#00a300">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/fontawesome.woff2?14663396" as="font" type="font/woff2" crossorigin=""> 
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/source-code-pro-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin=""> 
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/roboto-mono-v13-latin-500.woff2" as="font" type="font/woff2" crossorigin=""> 
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-700.woff2" as="font" type="font/woff2" crossorigin=""> 
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-600.woff2" as="font" type="font/woff2" crossorigin=""> 
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/SourceSansPro-Regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/freckle-face-v9-latin-regular.woff2" as="font" type="font/woff2" crossorigin=""> 
+<link rel="stylesheet" href="{% static 'home/Django Tutorial_files/main.css' %}">
+<link rel="stylesheet" href="{% static 'home/Django Tutorial_files/main(1).css' %}">
+<link rel="stylesheet" href="{% static 'home/Django Tutorial_files/main(2).css' %}">
+<link rel="stylesheet" href="{% static 'home/Django Tutorial_files/w3schools32.css' %}">
+<link rel="stylesheet" href="{% static 'home/Django Tutorial_files/main(3).css' %}">
+<script src="https://zz.bdstatic.com/linksubmit/push.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KTCFC3S"></script>
+<script src="{% static 'home/Django Tutorial_files/prism2.js' %}"></script>
+<link rel="stylesheet" href="{% static 'home/Django Tutorial_files/prism1.css' %}"><!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTCFC3S');
+
+var subjectFolder = location.pathname;
+subjectFolder = subjectFolder.replace("/", "");
+if (subjectFolder.startsWith("python/") == true ) {
+  if (subjectFolder.includes("/numpy/") == true ) {
+    subjectFolder = "numpy/"
+  } else if (subjectFolder.includes("/pandas/") == true ) {
+      subjectFolder = "pandas/"
+  } else if (subjectFolder.includes("/scipy/") == true ) {
+      subjectFolder = "scipy/"
+  }
+}
+subjectFolder = subjectFolder.substr(0, subjectFolder.indexOf("/"));
+</script>
+<!-- End Google Tag Manager -->
+<script src="{% static 'home/Django Tutorial_files/uic.js' %}"></script>
+<script data-cfasync="false" type="text/javascript">
+var k42 = false;
+// GPT slots
+var gptAdSlots = [];
+window.googletag = window.googletag || { cmd: [] };
+  googletag.cmd.push(function() {
+    googletag.pubads().setTargeting("page_section", subjectFolder);
+    var leaderMapping = googletag.sizeMapping().
+      // Mobile ad
+      addSize([0, 0], [320, 50]). 
+      // Vertical Tablet ad
+      addSize([512, 0], [468, 60]). 
+      // Horizontal Tablet
+      addSize([812, 0], [728, 90]).
+      // Small Desktop
+      addSize([1025, 0], [468, 60]).
+      // Normal Desktop
+      addSize([1182, 0], [728, 90]).
+      // Large Desktop and bigger ad
+      addSize([1457, 0], [[728, 90], [970, 90]]).build();
+    gptAdSlots[0] = googletag.defineSlot('/16833175/MainLeaderboard', [[728, 90], [970, 90]], 'div-gpt-ad-1422003450156-2').
+      defineSizeMapping(leaderMapping).addService(googletag.pubads());
+    var skyMapping = googletag.sizeMapping().
+      // Mobile ad
+      addSize([0, 0], [320, 50]). 
+      // Tablet ad
+      addSize([983, 0], [120, 600]). 
+      // Desktop
+      addSize([1143, 0], [160, 600]).   
+      // Large Desktop
+      addSize([1683, 0], [[160, 600], [300, 600], [300, 1050]]).build();
+    gptAdSlots[1] = googletag.defineSlot('/16833175/WideSkyScraper', [[160, 600], [300, 600], [300, 1050]], 'div-gpt-ad-1422003450156-5').
+      defineSizeMapping(skyMapping).addService(googletag.pubads());
+    var stickyMapping = googletag.sizeMapping().
+      // Mobile ad
+      addSize([0, 0], []). 
+      // Tablet ad
+      addSize([983, 0], [120, 600]). 
+      // Desktop
+      addSize([1143, 0], [160, 600]).   
+      // Large Desktop
+      addSize([1683, 0], [[160, 600], [300, 600], [300, 250]]).build();
+    gptAdSlots[4] = googletag.defineSlot('/16833175/StickySkyScraper', [[300, 600], [120, 600], [300, 250], [160, 600]], 'div-gpt-ad-1472547360578-0').
+      defineSizeMapping(stickyMapping).addService(googletag.pubads());
+    var mcontMapping = googletag.sizeMapping().
+      // Mobile ad
+      addSize([0, 0], [[300, 250], [336, 280], [320, 50]]). 
+      // Vertical Tablet ad
+      addSize([522, 0], [[300, 250], [336, 280], [468, 60]]). 
+      // Horizontal Tablet
+      addSize([782, 0], [728, 90]).
+      // Small Desktop
+      addSize([1025, 0], [[300, 250], [336, 280], [468, 60]]).
+      // Normal Desktop
+      addSize([1167, 0], [728, 90]).
+      // Large Desktop and bigger ad
+      addSize([1472, 0], [[728, 90], [970, 90], [970, 250]]).build();
+    gptAdSlots[5] = googletag.defineSlot('/16833175/MidContent', [[300, 250], [336, 280]], 'div-gpt-ad-1493883843099-0').
+      defineSizeMapping(mcontMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+    var bmrMapping = googletag.sizeMapping().
+      // Smaller
+      addSize([0, 0], [[300, 250], [336, 280]]). 
+      // Large Desktop
+      addSize([1272, 0], [[300, 250], [336, 280], [970, 250]]).build();
+      gptAdSlots[2] = googletag.defineSlot('/16833175/BottomMediumRectangle', [[300, 250], [336, 280], [970, 250]], 'div-gpt-ad-1422003450156-0').
+      defineSizeMapping(bmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+    var rbmrMapping = googletag.sizeMapping().
+      // Smaller
+      addSize([0, 0], []). 
+      // Large Desktop
+      addSize([1007, 0], [[300, 250], [336, 280]]).build();
+    gptAdSlots[3] = googletag.defineSlot('/16833175/RightBottomMediumRectangle', [[300, 250], [336, 280]], 'div-gpt-ad-1422003450156-3').
+      defineSizeMapping(rbmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+});  
+</script>
+<script data-cfasync="false" type="text/javascript">
+    window.snigelPubConf = {
+    "adengine": {
+      "activeLots": [],
+      "additionalGptAdSlotIds": ["div-gpt-ad-1422003450156-2", "div-gpt-ad-1422003450156-5", "div-gpt-ad-1472547360578-0", "div-gpt-ad-1493883843099-0", "div-gpt-ad-1422003450156-0", "div-gpt-ad-1422003450156-3"]
+  }
+}
+uic_r_a()
+</script>
+<script type="text/javascript">
+var stickyadstatus = "";
+function fix_stickyad() {
+  document.getElementById("stickypos").style.position = "sticky";
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));  
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));  
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 100) {
+      elem.style.position = "fixed";
+      elem.style.top = "100px";
+      stickyadstatus = "sticky";
+      document.getElementById("stickypos").style.position = "sticky";
+
+    }
+  } else {
+    if ((docTop + 100) - stickypos < 0) {  
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+      document.getElementById("stickypos").style.position = "static";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 100) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+      document.getElementById("stickypos").style.position = "static";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "100px";
+        stickyadstatus = "sticky";
+        document.getElementById("stickypos").style.position = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+<script async="" data-cfasync="false" src="https://cdn.snigelweb.com/adengine/w3schools.com/loader.js" type="text/javascript"></script>
+<script src="{% static 'home/Django Tutorial_files/common-deps.js' %}"></script>
+<script src="{% static 'home/Django Tutorial_files/user-session.js' %}"></script>
+<script src="{% static 'home/Django Tutorial_files/main.js' %}"></script>
+<style>
+.startlearningbtn {
+  font-size: 18px;
+  padding-left:25px;
+  padding-right:25px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top:6px;
+  /*background-color:#282A35!important;*/
+}
+/*.startlearningbtn:hover {
+  background-color:#000!important;
+}*/
+.red-intro-emoji {
+  float:right;
+  font-size:70px;
+  color:#ffc0c7;
+}
+body.darkpagetheme .red-intro-emoji {
+  color:#ee566a;  
+}
+
+
+.bigbtn {
+ margin-bottom:5px;
+ height:65px;
+ width:24%;
+ font-size:16px;
+ padding:20px 0;
+ text-align: center;
+ vertical-align: middle;
+ display: inline-block;
+ text-decoration:none !important;
+ border-radius:5px;
+}
+ 
+@media screen and (max-width: 600px){
+    .bigbtn {
+        display: block;
+     width: 100%;
+    }
+}
+</style>
+
+<script id="my-learning-cbups-script" type="text/javascript" src="{% static 'home/Django Tutorial_files/cbups.js' %}"></script>
+</head>
+
+<body class="">
+
+<div id="tnb-search-suggestions" style="display: none;"></div>
+
+<div id="top-nav-bar" class="classic">
+  <div id="pagetop" class="w3-bar notranslate w3-white">
+    <a id="w3-logo" href="https://www.w3schools.com/" class="w3-bar-item w3-button w3-hover-none w3-left ga-top ga-top-w3home" title="Home" style="width: 75px" aria-label="Home link">
+      <i class="fa fa-logo ws-hover-text-green" style="position: relative; z-index: 1; color: #04aa6d; font-size: 36px !important" aria-hidden="true"></i>
+    </a>
+
+    <nav class="tnb-desktop-nav w3-bar-item">
+      {% if user.is_anonymous %}
+      <h3 style="color:#282A35">Hello {{ user.username }}</h3>
+      {% endif %}
+      <a class="tnb-nav-btn w3-bar-item w3-button barex bar-item-hover w3-padding-16 ga-top ga-top-tut-and-ref" href="javascript:void(0)" onclick="TopNavBar.openNavItem(&#39;tutorials&#39;)" id="navbtn_tutorials" title="Tutorials and References" role="button">
+        Tutorials
+        <i class="fa fa-caret-down" style="font-size: 15px; display: inline;" aria-hidden="true"></i>
+        <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
+      </a>
+
+      <a class="tnb-nav-btn w3-bar-item w3-button barex bar-item-hover w3-padding-16 ga-top ga-top-exc-and-quz" href="javascript:void(0)" onclick="TopNavBar.openNavItem(&#39;exercises&#39;)" id="navbtn_exercises" title="Exercises and Quizzes" role="button">
+        Exercises
+        <i class="fa fa-caret-down" style="font-size: 15px; display: inline;" aria-hidden="true"></i>
+        <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
+      </a>
+
+      <a class="tnb-nav-btn w3-bar-item w3-button barex bar-item-hover w3-padding-16 tnb-paid-service ga-top ga-top-cert-and-course" href="javascript:void(0)" onclick="TopNavBar.openNavItem(&#39;certified&#39;)" id="navbtn_certified" title="Certificates" role="button">
+        Certificates
+        <i class="fa fa-caret-down" style="font-size: 15px; display: inline;" aria-hidden="true"></i>
+        <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
+      </a>
+
+      <a class="tnb-nav-btn w3-bar-item w3-button barex bar-item-hover w3-padding-16 ga-top ga-top-services" href="javascript:void(0)" onclick="TopNavBar.openNavItem(&#39;services&#39;)" id="navbtn_services" title="Our Services" role="button">
+        Services
+        <i class="fa fa-caret-down" style="font-size: 15px; display: inline;" aria-hidden="true"></i>
+        <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
+      </a>
+    </nav>
+  
+    <a class="tnb-menu-btn w3-bar-item w3-button bar-item-hover w3-padding-16 ga-top ga-top-menu" href="javascript:void(0)" onclick="TopNavBar.openMenu()" title="Menu" aria-label="Menu" role="button">
+      Menu
+      <i class="fa fa-caret-down" style="font-size: 15px" aria-hidden="true"></i>
+      <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
+    </a>
+
+    <div id="tnb-google-search-container" class="w3-bar-item">
+      <div id="tnb-google-search-inner-container">
+        <label for="tnb-google-search-input" class="tnb-soft-hide">
+          Search field
+        </label>
+
+        <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off" onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field" oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)" onblur="TopNavBar.searchFieldLostFocus(event)">
+
+        <div id="tnb-google-search-submit-btn" class="tnb-button-light" role="button" aria-label="Button to search" onclick="TopNavBar.googleSearchSubmit()">
+          <svg id="tnb-google-search-icon" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.8153 10.3439C12.6061 9.2673 13.0732 7.9382 13.0732 6.5C13.0732 2.91015 10.163 0 6.57318 0C2.98333 0 0.0731812 2.91015 0.0731812 6.5C0.0731812 10.0899 2.98333 13 6.57318 13C8.01176 13 9.3412 12.5327 10.4179 11.7415L10.4171 11.7422C10.4466 11.7822 10.4794 11.8204 10.5156 11.8566L14.3661 15.7071C14.7566 16.0976 15.3898 16.0976 15.7803 15.7071C16.1708 15.3166 16.1708 14.6834 15.7803 14.2929L11.9298 10.4424C11.8936 10.4062 11.8553 10.3734 11.8153 10.3439ZM12.0732 6.5C12.0732 9.53757 9.61075 12 6.57318 12C3.53561 12 1.07318 9.53757 1.07318 6.5C1.07318 3.46243 3.53561 1 6.57318 1C9.61075 1 12.0732 3.46243 12.0732 6.5Z" fill="black"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div id="tnb-google-search-mobile-action-btns">
+        <div id="tnb-google-search-mobile-show" class="tnb-button" onclick="TopNavBar.googleSearchShowMobileContainer()" aria-label="Button to open search field" role="button">
+          <svg viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.8153 10.3439C12.6061 9.2673 13.0732 7.9382 13.0732 6.5C13.0732 2.91015 10.163 0 6.57318 0C2.98333 0 0.0731812 2.91015 0.0731812 6.5C0.0731812 10.0899 2.98333 13 6.57318 13C8.01176 13 9.3412 12.5327 10.4179 11.7415L10.4171 11.7422C10.4466 11.7822 10.4794 11.8204 10.5156 11.8566L14.3661 15.7071C14.7566 16.0976 15.3898 16.0976 15.7803 15.7071C16.1708 15.3166 16.1708 14.6834 15.7803 14.2929L11.9298 10.4424C11.8936 10.4062 11.8553 10.3734 11.8153 10.3439ZM12.0732 6.5C12.0732 9.53757 9.61075 12 6.57318 12C3.53561 12 1.07318 9.53757 1.07318 6.5C1.07318 3.46243 3.53561 1 6.57318 1C9.61075 1 12.0732 3.46243 12.0732 6.5Z" fill="currentColor"></path>
+          </svg>
+        </div>
+
+        <div id="tnb-google-search-mobile-close" class="tnb-button" onclick="TopNavBar.googleSearchHideMobileContainer()" role="button" aria-label="Close search field">
+          <i>×</i>
+        </div>
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+
+<div id="footerwrapper">
+  <style>
+  @media screen and (max-width: 1440px) {
+    .footerlinks_1 {
+      padding-left:2.5%;  
+      padding-right:1.5%;      
+    }
+    .footerlinks_1:nth-child(1) {
+      width:100%;
+      padding-left:0;
+    }
+    .footerlinks_1:nth-child(2) {
+      padding-left:0;
+    }
+    .footerlinks_2 {
+      padding-right:2%;  
+    }
+    .footerlinks_2:nth-child(1) {
+      padding-left:0;
+    }
+    .footerlinks_2:nth-child(4) {
+      padding-right:0;
+    }
+    #spacemyfooter  {
+      padding-bottom:400px;
+    }
+    .footertext {
+      padding-left:0;
+    }
+    .footersome {
+      padding-left:0;    
+    }
+    .footer-hide-special {
+      display:none;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    #footerwrapper {
+      background-size: 500px, auto;
+    }
+    .footerlinks_1 {
+      padding-left:1.8%;
+      padding-right:1.8%;  
+    }
+    .footerlinks_2 {
+      padding-right:0;  
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .footersome {
+    padding:45px 10px 30px 10px;
+    }
+  }
+  
+  </style>
+  <div id="spacemyfooter">
+  
+  
+  
+  
+  <div style="overflow:hidden;">
+  <div class="footerlinks_1">
+    <a href="https://www.w3schools.com/" class="ga-bottom">
+      <i class="fa fa-logo"></i>
+    </a>
+  </div>
+  <div class="footerlinks_1"><a href="https://www.w3schools.com/spaces/index.php">SPACES</a></div>
+  <div class="footerlinks_1"><a href="https://www.w3schools.com/plus/index.php">UPGRADE</a></div>
+  <div class="footerlinks_1"><a href="https://www.w3schools.com/plus/index.php">AD-FREE</a></div>
+  <div class="footerlinks_1"><a href="https://campus.w3schools.com/pages/newsletter" target="_blank">NEWSLETTER</a></div>
+  <div class="footerlinks_1"><a href="https://campus.w3schools.com/collections/certifications" target="_blank">GET CERTIFIED</a></div>
+  <div class="footerlinks_1"><a href="javascript:void(0);" onclick="reportError();return false">CONTACT US</a></div>
+  </div>
+  <style>
+  /*Remove this style after 20. April 2024*/
+  #err_message {
+    padding:8px 16px 16px 40px;
+    border-radius:5px;
+    display:none;
+    position:relative;
+    background-color:#2D3748;
+    color:#FFF4A3;
+    font-family:'Source Sans Pro', sans-serif;
+  }
+  #err_message h2 {
+    font-family:'Source Sans Pro', sans-serif;
+  }
+  #err_message p {
+    color:#f1f1f1;
+  }
+  #err_message #close_err_message {
+    position:absolute;
+    right:0;
+    top:0;
+    font-size:20px;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    text-align:center;
+  }
+  #err_message #close_err_message:hover {
+    background-color:#FFF4A3;
+    color:#2D3748;
+    border-radius:50%
+  }
+  </style>
+  
+  <div id="err_message">
+    <span id="close_err_message" onclick="this.parentElement.style.display=&#39;none&#39;">×</span>
+    <h2>Contact Sales</h2>
+    <p>If you want to use W3Schools services as an educational institution, team or enterprise, send us an e-mail:<br>sales@w3schools.com</p>
+    <h2>Report Error</h2>
+    <p>If you want to report an error, or if you want to make a suggestion, send us an e-mail:<br>help@w3schools.com</p>
+  </div>
+  
+  
+  <div style="overflow:hidden;">
+  <div class="footerlinks_2">
+    <h5 style="font-family: &#39;Source Sans Pro&#39;, sans-serif;">Top Tutorials</h5>
+    <a href="https://www.w3schools.com/html/default.asp" class="ga-bottom">HTML Tutorial</a><br>
+    <a href="https://www.w3schools.com/css/default.asp" class="ga-bottom">CSS Tutorial</a><br>
+    <a href="https://www.w3schools.com/js/default.asp" class="ga-bottom">JavaScript Tutorial</a><br>
+    <a href="https://www.w3schools.com/howto/default.asp" class="ga-bottom">How To Tutorial</a><br>
+    <a href="https://www.w3schools.com/sql/default.asp" class="ga-bottom">SQL Tutorial</a><br>
+    <a href="https://www.w3schools.com/python/default.asp" class="ga-bottom">Python Tutorial</a><br>
+    <a href="https://www.w3schools.com/w3css/default.asp" class="ga-bottom">W3.CSS Tutorial</a><br>
+    <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp" class="ga-bottom">Bootstrap Tutorial</a><br>
+    <a href="https://www.w3schools.com/php/default.asp" class="ga-bottom">PHP Tutorial</a><br>
+    <a href="https://www.w3schools.com/java/default.asp" class="ga-bottom">Java Tutorial</a><br>
+    <a href="https://www.w3schools.com/cpp/default.asp" class="ga-bottom">C++ Tutorial</a><br>
+    <a href="https://www.w3schools.com/jquery/default.asp" class="ga-bottom">jQuery Tutorial</a><br>
+  </div>
+  <div class="footerlinks_2">
+    <h5 style="font-family: &#39;Source Sans Pro&#39;, sans-serif;">Top References</h5>
+    <a href="https://www.w3schools.com/tags/default.asp" class="ga-bottom">HTML Reference</a><br>
+    <a href="https://www.w3schools.com/cssref/index.php" class="ga-bottom">CSS Reference</a><br>
+    <a href="https://www.w3schools.com/jsref/default.asp" class="ga-bottom">JavaScript Reference</a><br>
+    <a href="https://www.w3schools.com/sql/sql_ref_keywords.asp" class="ga-bottom">SQL Reference</a><br>
+    <a href="https://www.w3schools.com/python/python_reference.asp" class="ga-bottom">Python Reference</a><br>
+    <a href="https://www.w3schools.com/w3css/w3css_references.asp" class="ga-bottom">W3.CSS Reference</a><br>
+    <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp" class="ga-bottom">Bootstrap Reference</a><br>
+    <a href="https://www.w3schools.com/php/php_ref_overview.asp" class="ga-bottom">PHP Reference</a><br>
+    <a href="https://www.w3schools.com/colors/colors_names.asp" class="ga-bottom">HTML Colors</a><br>
+    <a href="https://www.w3schools.com/java/java_ref_keywords.asp" class="ga-bottom">Java Reference</a><br>
+    <a href="https://www.w3schools.com/angular/angular_ref_directives.asp" class="ga-bottom">Angular Reference</a><br>
+    <a href="https://www.w3schools.com/jquery/jquery_ref_overview.asp" class="ga-bottom">jQuery Reference</a><br>
+  </div>
+  <div class="footerlinks_2">
+    <h5 style="font-family: &#39;Source Sans Pro&#39;, sans-serif;">Top Examples</h5>
+    <a href="https://www.w3schools.com/html/html_examples.asp" class="ga-bottom">HTML Examples</a><br>
+    <a href="https://www.w3schools.com/css/css_examples.asp" class="ga-bottom">CSS Examples</a><br>
+    <a href="https://www.w3schools.com/js/js_examples.asp" class="ga-bottom">JavaScript Examples</a><br>
+    <a href="https://www.w3schools.com/howto/default.asp" class="ga-bottom">How To Examples</a><br>
+    <a href="https://www.w3schools.com/sql/sql_examples.asp" class="ga-bottom">SQL Examples</a><br>
+    <a href="https://www.w3schools.com/python/python_examples.asp" class="ga-bottom">Python Examples</a><br>
+    <a href="https://www.w3schools.com/w3css/w3css_examples.asp" class="ga-bottom">W3.CSS Examples</a><br>
+    <a href="https://www.w3schools.com/bootstrap/bootstrap_examples.asp" class="ga-bottom">Bootstrap Examples</a><br>
+    <a href="https://www.w3schools.com/php/php_examples.asp" class="ga-bottom">PHP Examples</a><br>
+    <a href="https://www.w3schools.com/java/java_examples.asp" class="ga-bottom">Java Examples</a><br>
+    <a href="https://www.w3schools.com/xml/xml_examples.asp" class="ga-bottom">XML Examples</a><br>
+    <a href="https://www.w3schools.com/jquery/jquery_examples.asp" class="ga-bottom">jQuery Examples</a><br>
+  </div>
+  <div class="footerlinks_2">
+    <a href="https://campus.w3schools.com/collections/course-catalog" target="_blank" class="ga-bottom"><h5 style="font-family: &#39;Source Sans Pro&#39;, sans-serif;">Get Certified</h5></a>
+    <a href="https://campus.w3schools.com/collections/certifications/products/html-certificate" target="_blank" class="ga-bottom">HTML Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/css-certificate" target="_blank" class="ga-bottom">CSS Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/javascript-certificate" target="_blank" class="ga-bottom">JavaScript Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/front-end-certificate" target="_blank" class="ga-bottom">Front End Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/sql-certificate" target="_blank" class="ga-bottom">SQL Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/python-certificate" target="_blank" class="ga-bottom">Python Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/php-certificate" target="_blank" class="ga-bottom">PHP Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/jquery-certificate" target="_blank" class="ga-bottom">jQuery Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/java-certificate" target="_blank" class="ga-bottom">Java Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/c-certificate" target="_blank" class="ga-bottom">C++ Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/c-certificate-1" target="_blank" class="ga-bottom">C# Certificate</a><br>
+    <a href="https://campus.w3schools.com/collections/certifications/products/xml-certificate" target="_blank" class="ga-bottom">XML Certificate</a><br>
+  </div>
+  </div>
+  
+  
+  <div class="footersome">
+    <a target="_blank" href="https://www.youtube.com/@w3schools" title="W3Schools on YouTube"><i class="fa fa-youtube"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/company/w3schools.com/" title="W3Schools on LinkedIn"><i class="fa"></i></a>
+    <a target="_blank" href="https://discord.gg/6Z7UaRbUQM" title="Join the W3schools community on Discord"><i class="fa"></i></a>
+    <a target="_blank" href="https://www.facebook.com/w3schoolscom/" title="W3Schools on Facebook"><i class="fa"></i></a>
+    <a target="_blank" href="https://www.instagram.com/w3schools.com_official/" title="W3Schools on Instagram"><i class="fa"></i></a>
+    <div class="w3-hide-large" style="margin-top:16px"></div>
+    <a target="_blank" href="https://www.w3schools.com/forum/default.asp" title="Forum" class="textlink">FORUM</a>
+    <a target="_blank" href="https://www.w3schools.com/about/default.asp" title="About W3Schools" class="textlink">ABOUT</a>  
+    <a target="_blank" href="https://93d08a94.sibforms.com/serve/MUIFANcgnq870f9dSud-FqpyiNiT9Hf7Neaxms0MYk3Vls9hpjaXTEbv0c7uVF1UINWpqSDY6_DU9rogV4HkwIgRhxwVUZlYeU0k9Dk0zvK_WPtcqT1M0CwXtaF7OArmb7PqlsHk1AHCM6p4pNVtMTNOatAnIusfNWfUNfoolqkk7FLimIaFVN71kSMBOdLIwkagkBw9XybFEG0G" title="Contact us about Classroom plans" class="textlink">CLASSROOM</a>    
+  </div>
+  
+  <div class="footertext">
+  W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning.<br class="footer-hide-special">
+  Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness<br class="footer-hide-special">
+  of all content. While using W3Schools, you agree to have read and accepted our <a href="https://www.w3schools.com/about/about_copyright.asp" class="ga-bottom">terms of use</a>, 
+  <a href="https://www.w3schools.com/about/about_privacy.asp" class="ga-bottom">cookie and privacy policy</a>.<br><br>
+  <a href="https://www.w3schools.com/about/about_copyright.asp" class="ga-bottom">Copyright 1999-2024</a> by Refsnes Data. All Rights Reserved.
+  <a href="https://www.w3schools.com/w3css/default.asp" class="ga-bottom">W3Schools is Powered by W3.CSS</a>.<br><br>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  </div>
+  <script src="{% static 'home/Django Tutorial_files/main(4).js' %}"></script>
+  <script src="{% static 'home/Django Tutorial_files/w3schools_footer.js' %}"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    MyLearning.loadUser('footer', function () {
+      // if (!UserSession.loggedIn) {
+      //   addMyLearnButt();
+      // }
+    });
+    function docReady(fn) {
+      document.addEventListener("DOMContentLoaded", fn);
+      if (document.readyState === "interactive" || document.readyState === "complete" ) {
+        fn();
+      }
+    }
+    uic_r_z();
+    uic_r_d()
+  
+  /*
+  function addMyLearnButt() {
+    let nav = document.getElementsByClassName("nextprev");
+    if (document.body.contains(nav[1])) {
+      if ((nav[1].firstElementChild.innerHTML.indexOf("Previous") || nav[1].firstElementChild.innerHTML.indexOf("Home") !== -1) && (nav[1].firstElementChild.nextElementSibling.innerHTML.indexOf("Next") !== -1)) {
+        let myLearnButt = document.createElement("a");
+        myLearnButt.innerHTML="Log in to track progress";
+        myLearnButt.classList.add("w3-btn", "w3-hide-small", "myl-nav-butt");
+        myLearnButt.href="https://www.w3schools.com/signup/?utm_source=classic&utm_medium=" + subjectFolder + "_tutorial&utm_campaign=button_lower_navigation";
+        myLearnButt.setAttribute("title", "Sign Up and improve Your Learning Experience");
+        myLearnButt.setAttribute("target", "_blank");
+        nav[1].classList.add("w3-center");
+        nav[1].firstElementChild.insertAdjacentElement("afterend", myLearnButt);
+      }
+    }
+  }
+  */
+  </script>
+  
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+  <![endif]-->
+  </body></html>
+  </div>
+</div>
+  
